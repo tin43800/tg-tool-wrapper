@@ -1,0 +1,8 @@
+# Core: bot wrapper (pulled from GitHub for now; switch to PyPI when published)
+tg-tool-wrapper @ git+https://github.com/tin43800/tg-tool-wrapper.git@main
+
+# Env loader
+python-dotenv>=1.0.0
+
+# User's tool dependencies (filled in by skill from target tool's requirements.txt)
+{{EXTRA_DEPS}}

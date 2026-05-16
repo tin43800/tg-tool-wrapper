@@ -1,0 +1,17 @@
+services:
+  {{BOT_NAME}}:
+    build: .
+    container_name: {{BOT_NAME}}
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - {{BOT_NAME}}_owner:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  {{BOT_NAME}}_owner:

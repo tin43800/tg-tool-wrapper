@@ -1,0 +1,13 @@
+{
+  "name": "tg-tool-wrapper",
+  "version": "0.1.0",
+  "description": "Wrap any Python tool as a Telegram bot — pip-installable framework + Claude Code skill that scaffolds and deploys via Docker.",
+  "author": {
+    "name": "tin43800",
+    "url": "https://github.com/tin43800"
+  },
+  "homepage": "https://github.com/tin43800/tg-tool-wrapper",
+  "repository": "https://github.com/tin43800/tg-tool-wrapper",
+  "license": "MIT",
+  "keywords": ["telegram", "bot", "automation", "docker", "python"]
+}

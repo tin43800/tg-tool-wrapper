@@ -70,9 +70,47 @@ bot.run()
 4. 收到 token：`1234567890:ABCdef...`
 5. 寫進 `.env`：`TELEGRAM_BOT_TOKEN=1234567890:ABCdef...`
 
-## 配套工具：telegram-deployer skill
+## 配套：telegram-deployer Claude Code skill
 
-如果你想「把現有 Python 工具一鍵打包成 Telegram bot」，搭配 [`telegram-deployer`](https://github.com/tin43800/tg-tool-wrapper/tree/main/skill) Claude Code skill 使用——在你的 Claude Code 說「幫我把 `parse_salary.py` 部署到 telegram」，它會自動產出 Dockerfile / docker-compose / bot.py 並啟動。
+這個 repo 同時是一個 **Claude Code plugin** —— 內含 `telegram-deployer` skill，可以在你的 Claude Code 說一句話就把任何 Python 工具打包成 Telegram bot 並用 Docker 跑起來。
+
+### 安裝（plugin 方式，推薦）
+
+在你的 Claude Code 裡：
+```
+/plugin install tin43800/tg-tool-wrapper
+```
+
+### 安裝（本地開發 / 還沒推上 GitHub 時）
+
+```bash
+# macOS / Linux / Git Bash
+bash D:/Claude/shared/tg-tool-wrapper/scripts/install-skill-local.sh
+
+# Windows PowerShell (admin)
+D:\Claude\shared\tg-tool-wrapper\scripts\install-skill-local.ps1
+```
+
+### 使用
+
+在 Claude Code 對話框輸入：
+> 幫我把 `D:/Claude/tools_salary/parse_salary.py` 部署到 telegram
+
+skill 會：
+1. 偵測 Docker 是否可用
+2. 讀你指的 Python 檔案，分析輸入類型
+3. 互動式問你 bot token、需要的 env vars、輸出目錄
+4. 產出 `Dockerfile` / `docker-compose.yml` / `bot.py` / `.env`
+5. `docker compose up -d --build` 自動啟動
+6. 驗證 bot 活著並告訴你下一步在 Telegram 怎麼測試
+
+### 部署目標
+
+- ✅ macOS（Docker Desktop）
+- ✅ Windows 10/11（Docker Desktop / WSL2）
+- ✅ Linux（docker engine）
+
+只要對方裝了 Docker，這個 skill 在他自己機器上跑起來的 bot 就會用他自己的 token、他自己的 Telegram 帳號當 owner。
 
 ## License
 
