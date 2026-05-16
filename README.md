@@ -2,7 +2,7 @@
 
 把任何 Python 函式包成 Telegram bot — owner-lock、decorator-based、Docker 部署。
 
-設計給「個人自動化工具想丟上 Telegram 用」的場景：薪資單 OCR、帳單抓取、翻譯小工具、查詢腳本……都能一鍵變成你私人的 Telegram bot。
+設計給「個人自動化工具想丟上 Telegram 用」的場景：翻譯小工具、查詢腳本……都能一鍵變成你私人的 Telegram bot。
 
 ## 特性
 
